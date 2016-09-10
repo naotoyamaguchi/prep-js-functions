@@ -12,6 +12,8 @@
  *  functions.
  */
 
+var a = 51;
+var b = 212;
 
 /**
  *  #2
@@ -21,6 +23,11 @@
  *  Store this value in a variable named `sum`.
  */
 
+function add(add1, add2){
+	return add1 + add2;
+}
+var sum = add(a, b);
+console.log(sum);
 
 /**
  *  #3
@@ -30,6 +37,11 @@
  *  Store this value in a variable named `difference`
  */
 
+function subtract(subtract1, subtract2){
+	return subtract1 - subtract2
+}
+var difference = subtract(a, b)
+console.log(difference)
 
 /**
  *  #4
@@ -38,6 +50,12 @@
  *  This function returns the result of multiplying `b` by `a`.
  *  Store this value in a variable named `product`
  */
+
+ function multiply(multiply1, multiply2){
+ 	return multiply1 * multiply2
+ }
+ var product = multiply(a, b)
+ console.log(product)
 
 
 /**
@@ -50,6 +68,13 @@
  *  value stored in `difference`.
  */
 
+function checkDifference(score){
+	return "My football team lost " +score+ " times this week"
+}
+
+console.log(checkDifference(difference))
+
+//I need to check this. 
 
 /**
  *  #6
@@ -61,6 +86,10 @@
  *  stored in the variable `sum`.
  */
 
+function checkSum(X){
+	return "I CAN ADDZ " +X+ " NUMBERS"
+}
+console.log(checkSum(sum))
 
 /**
  *  #7
@@ -71,6 +100,10 @@
  *  then prints the result to the console.
  */
 
+function checkProduct(firstNumber, secondNumber){
+	return firstNumber*secondNumber
+}
+console.log(checkProduct(product, difference))
 
 /**
  *  #8
@@ -86,6 +119,12 @@
  *      addThenSubtract(4, 5, 7); //-> returns 2 because 4 + 5 - 7 = 2
  */
 
+function addThenSubtract(firstNumber, secondNumber, thirdNumber){
+	var initialSum = add(firstNumber, secondNumber)
+	return initialSum - thirdNumber
+}
+
+console.log(addThenSubtract(4, 5, 7))
 
 /**
  *  #9
@@ -99,6 +138,21 @@
  *  Store the return of this function to a variable named `howMany`
  */
 
+//THIS IS THE LOOOOONG WAY
+// function addThenMultiply(firstNumber, secondNumber, thirdNumber){
+// 	var initialSum = add(firstNumber, secondNumber)
+// 	return multiply(initialSum, thirdNumber)
+// }
+
+// var howMany = addThenMultiply(3, 5, 10)
+// console.log(howMany)
+
+function addThenMultiply(n1, n2, n3){
+	return multiply(add(n1, n2), n3)
+}
+
+var howMany = addThenMultiply(3,5,10)
+console.log(howMany)
 
 /**
  *  #10
@@ -115,6 +169,12 @@
  * Store the return value to a variable named `myFullName`
  */
 
+ function createFullName(firstName, lastName){
+ 	return firstName +" "+ lastName
+ }
+
+var myFullName = createFullName("Naoto", "Yamaguchi")
+console.log(myFullName)
 
 /**
  *  #11
@@ -131,6 +191,17 @@
  *  Store the return value to a variable named** `canDrinkBeer`
  */
 
+function verifyDrinkingAge(age){
+	if (age >= 21) {
+		return true
+	}
+	else {
+		return false
+	}
+}
+
+var canDrinkBeer = verifyDrinkingAge(22)
+console.log(canDrinkBeer)
 
 /**
  *  #12
@@ -142,6 +213,21 @@
  *  should be "This Party will have an open bar".
  */
 
+
+//need help with this.
+//1. dont know what to set the parameter to and/or how to use it in the function
+//2. without a parameter, always reports as candrinkbeer as false
+
+function throwParty(placeHolder){
+	if (placeHolder === false) {
+		return "The Party will have tons of Cake!"
+	}
+	else {
+		return "This Party will have an open bar!"
+	}
+}
+
+console.log(throwParty(canDrinkBeer))
 
 /**
  *  #13
@@ -163,6 +249,12 @@
  *      "Peter Bojanglesloves loves to eat California Burritos"
  */
 
+function eatFood(firstName, lastName, food){
+	var fullName = createFullName(firstName, lastName);
+	return (fullName+ " loves to eat "+food)
+}
+
+console.log(eatFood("Naoto", "Yamaguchi", "Tater tots"))
 
 /**
  *  #14
@@ -176,3 +268,22 @@
  *  othewise the message will be `"Let it go.... LET IT GOOOOOOoOoOoOo..."`
  */
 
+
+//same issue as 12
+//dont know how to repeat / couldnt figure out
+
+function repeater(){
+	var msg;
+	if (canDrinkBeer === true) {
+		msg = "Bacon Pancakes, makin' Bacon Pancakes...";
+	}
+	else {
+		msg = "Let it go.... LET IT GOOOOOOoOoOoOo...";
+	}
+	for (var i = 0 ; i <= howMany; i++){
+		console.log(i, msg)
+	}
+	return;
+}
+
+repeater()
